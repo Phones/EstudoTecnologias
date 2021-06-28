@@ -1,0 +1,39 @@
+Comandos para utilizar docker:
+
+    Executar um container:
+        docker run -it "Nome container":
+                    |
+                    |-> -d  -> Faz com que o conteiner seja executado em segundo plano
+
+    lista todos os conteiners ativos -> docker ps -a
+
+    Para parar a execução de um conteiner -> docker stop "id do conteiner" 
+
+    Colocar o container em uma porta, para acessar ele pelo navegador -> docker run -p 80->80 (Ex-> nginx)
+
+    Reiniciar um conteiner -> docker start "id do conteiner"
+
+    para nomear um conteiner, basta adicionar o seguinte comando, na hora de criar o mesmo -> --name "nome do conteiner"
+
+    Imprimir o log gerado por um conteiner -> docker logs "nome conteiner"
+
+    Para remover um conteiner -> docker rm "nome conteiner"
+
+    listar todas as imagens disponiveis -> docker image ls
+
+
+criar uma imagem:
+    criar um arquivo Dockerfile:
+        Preencher os dados no arquivo Dockerfile, e então transforma-lo em uma imagem.
+
+        docker build . -> "Com o ponto o docker entende, que existe um arquivo dockerfile na pasta atual, e então utiliza ela para criar a imagem"
+
+        obs -> Sempre que uma imagem for alterada, é necessario buildar uma imagem novamente
+
+        Para nomear uma imagem é utilizado o comando -t -> docker build -t "nome da imagem" .
+
+    Para remover uma imagem -> docker rmi "nome da imagem"
+
+    Para remover todas as imagens que não estão sendo utilizadas -> docker system prune
+
+
